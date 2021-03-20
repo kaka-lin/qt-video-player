@@ -1,12 +1,12 @@
 # vscode
 .vscode
 
-# pyenv
-venv/
-.venv/
-
 # Mac
 .DS_Store
 ._.DS_Store
 
+# QML
+*.qmlc
+
+# cmake
 build/

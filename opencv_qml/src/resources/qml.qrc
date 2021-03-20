@@ -1,0 +1,15 @@
+<!DOCTYPE RCC><RCC version="0.1">
+    <qresource prefix="/">
+        <file>main.qml</file>
+
+        <file>components/qmldir</file>
+
+        <file>components/common/Clock.qml</file>
+        <file>components/common/KProgressBar.qml</file>
+        <file>components/common/KToolButton.qml</file>
+        <file>components/common/qmldir</file>
+
+        <file>images/exit.png</file>
+        <file>images/about.png</file>
+    </qresource>
+</RCC>
