@@ -21,6 +21,6 @@ $ ./build.sh
 $ ./cmake-build.sh
 ```
 
-### 3. Run with Docker
+Results as below:
 
-Please see this [doc](../doc/run_with_docker.md)
+![](../images/video-player.png)

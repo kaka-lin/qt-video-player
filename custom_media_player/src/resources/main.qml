@@ -13,7 +13,7 @@ ApplicationWindow {
     minimumWidth: 640
     minimumHeight: 480
 
-    title: qsTr("Qml Template")
+    title: qsTr("Custom Media Player")
 
 //////////////////////////////////////////////////////////////////////////
 // menu
