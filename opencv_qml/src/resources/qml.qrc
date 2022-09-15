@@ -9,7 +9,8 @@
         <file>components/common/KToolButton.qml</file>
         <file>components/common/qmldir</file>
 
-        <file>images/exit.png</file>
-        <file>images/about.png</file>
+        <file>images/about.ico</file>
+        <file>images/exit.ico</file>
+        <file>images/newFile.ico</file>
     </qresource>
 </RCC>

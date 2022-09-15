@@ -21,10 +21,6 @@ $ ./build.sh
 $ ./cmake-build.sh
 ```
 
-### 3. Run with Docker
-
-Please see this [doc](../doc/run_with_docker.md)
-
 ## Other
 
 ### Enable Qt Logging Info
