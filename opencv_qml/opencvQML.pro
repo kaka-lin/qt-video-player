@@ -32,7 +32,10 @@ HEADERS += \
 RESOURCES += src/resources/qml.qrc
 
 ### OpenCV
-# Only on Linux, as below:
+# For macOS: brew install opencv
+#INCLUDEPATH += /opt/homebrew/opt/opencv/include/opencv4
+#LIBS += `pkg-config --cflags --libs opencv4`
+# For Linux
 #CONFIG += link_pkgconfig
 #PKGCONFIG += opencv
 LIBS += `pkg-config --cflags --libs opencv`
