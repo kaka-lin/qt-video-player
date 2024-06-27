@@ -18,19 +18,19 @@ MyMediaPlayer::MyMediaPlayer(QObject *parent): QObject(parent)
     char cwd[MAXPATHLEN];
     string path;
     size_t pos;
-    QString data_path;
 
-    if (getcwd(cwd, sizeof(cwd)) != NULL) {
+
+    if (getcwd(cwd, sizeof(cwd)) != NULL && video_path.isEmpty()) {
         printf("Current working dir: %s\n", cwd);
         path = string(cwd);
         pos = path.find("custom_media_player");
-        data_path = QString::fromStdString(path.substr(0, pos) + "videos/wids-workshop-2020.mp4");
-        qDebug() << data_path;
+        video_path = QString::fromStdString(path.substr(0, pos) + "videos/wids-workshop-2020.mp4");
+        qDebug() << video_path;
     } else {
         qDebug() << "Please replace the path with your video path";
     }
 
-    m_player->setMedia(QMediaContent(QUrl::fromLocalFile(data_path)));
+    m_player->setMedia(QMediaContent(QUrl::fromLocalFile(video_path)));
 }
 
 QAbstractVideoSurface *MyMediaPlayer::videoSurface() const
@@ -49,6 +49,20 @@ void MyMediaPlayer::setVideoSurface(QAbstractVideoSurface *surface)
 
     m_surface = surface;
     m_player->setVideoOutput(m_surface);
+}
+
+QString MyMediaPlayer::videoPath() const
+{
+    return video_path;
+}
+
+void MyMediaPlayer::setVideoPath(QString path)
+{
+    if (video_path == path)
+        return;
+
+    video_path = path;
+    m_player->setMedia(QMediaContent(QUrl::fromLocalFile(video_path)));
 }
 
 void MyMediaPlayer::getMetaData()

@@ -12,6 +12,7 @@ class MyMediaPlayer : public QObject
     private:
         Q_OBJECT
         Q_PROPERTY(QAbstractVideoSurface *videoSurface READ videoSurface WRITE setVideoSurface)
+        Q_PROPERTY(QString videoPath READ videoPath WRITE setVideoPath)
 
     public:
         Q_INVOKABLE void play();
@@ -29,6 +30,9 @@ class MyMediaPlayer : public QObject
         QAbstractVideoSurface *videoSurface() const;
         void setVideoSurface(QAbstractVideoSurface *surface);
 
+        QString videoPath() const;
+        void setVideoPath(QString path);
+
         void onNewVideoContentReceived(const QVideoFrame &frame);
         void onMediaStatusChanged(QMediaPlayer::MediaStatus status);
 
@@ -39,6 +43,7 @@ class MyMediaPlayer : public QObject
         QAbstractVideoSurface *m_surface = NULL;
         QVideoSurfaceFormat m_format;
         QMediaPlayer *m_player;
+        QString video_path = "";
 };
 
 
