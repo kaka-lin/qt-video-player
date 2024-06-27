@@ -100,7 +100,16 @@ ApplicationWindow {
         visible: false
         title: "Please choose a file"
         folder: shortcuts.home
-        selectFolder: true
+        nameFilters: [ "Video Files (*.avi *.mp4 *.mkv)", "All files (*)" ]
+
+        onAccepted: {
+            var path = fileDialog.fileUrl.toString();
+            // remove prefixed "file:///" -> /
+            path = path.replace(/^(file:\/{2})|(qrc:\/{2})|(http:\/{2})/,"");
+            // unescape html codes like '%23' for '#'
+            var cleanPath = decodeURIComponent(path);
+            player.videoPath = cleanPath
+        }
     }
 
     Row {
