@@ -19,7 +19,7 @@ $ docker pull kakalin/qt:5.12.0
 And then running with docker:
 
 ```bash
-$ ./run.sh
+$ ./docker-run.sh
 ```
 
 > If you have some issues with using it, please check here or here, please check [here](https://github.com/kaka-lin/qt-video-player/blob/master/doc/run_with_docker.md) or [here](https://github.com/kaka-lin/qt-template/tree/master/docker)
