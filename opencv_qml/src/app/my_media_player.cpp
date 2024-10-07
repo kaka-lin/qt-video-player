@@ -80,6 +80,8 @@ void MyMediaPlayer::onVideoFrameReady(cv::Mat curr_frame)
     m_image = m_image.rgbSwapped();
     m_image = m_image.convertToFormat(QVideoFrame::imageFormatFromPixelFormat(QVideoFrame::Format_RGB32));
 
+    // [C++] m_surface->present():
+    //   輸入為 QImage 時，會自動將 QImage 轉為 QVideoFrame
     m_surface->present(m_image);
 }
 
